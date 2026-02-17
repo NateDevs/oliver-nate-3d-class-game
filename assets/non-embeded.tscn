@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c88umu3iqrbgb"]
+
+[ext_resource type="PackedScene" uid="uid://6pq7siyb1gjg" path="res://assets/dungeon_assets/props/chest_gold.glb" id="1_6u40h"]
+
+[node name="chest_gold2" unique_id=580191374 instance=ExtResource("1_6u40h")]
+
+[node name="chest_gold_lid" parent="chest_gold" parent_id_path=PackedInt32Array(1910636825) index="0" unique_id=954996991]
+transform = Transform3D(1, 0, 0, 0, -0.50000006, 0.8660254, 0, -0.8660254, -0.50000006, 0, 0.5, -0.56488323)

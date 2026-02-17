@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dtvgtdiy5ponb"]
 
+[ext_resource type="PackedScene" uid="uid://dhvu58t0pfrx2" path="res://assets/dungeon_assets/scenes/wall.tscn" id="1_i2aat"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_m802k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m802k"]
@@ -13,6 +14,7 @@ sky_material = SubResource("ProceduralSkyMaterial_m802k")
 background_mode = 2
 sky = SubResource("Sky_i2aat")
 tonemap_mode = 3
+ssr_enabled = true
 ssao_enabled = true
 sdfgi_use_occlusion = true
 glow_enabled = true
@@ -183,6 +185,12 @@ depth = 3.0
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14, 2, 0)
 polygon = PackedVector2Array(0, 0, 4.2000003, 2, 4.2000003, 0)
 depth = 3.0
+
+[node name="Wall9" parent="CSGCombiner3D" unique_id=588016428 instance=ExtResource("1_i2aat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7, 0, -19)
+
+[node name="Wall13" parent="CSGCombiner3D" unique_id=1210887635 instance=ExtResource("1_i2aat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7, 0, -19)
 
 [node name="ProtoController" parent="." unique_id=125454665 instance=ExtResource("1_m802k")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -13.1, -7.1525574e-07, -12.3)
