@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bht40fcn1qvn6"]
+
+[ext_resource type="PackedScene" uid="uid://bkwjy8ek3wchf" path="res://assets/dungeon_assets/building/wall_half_endcap.glb" id="1_2ulli"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ifmlk"]
+size = Vector3(1.9, 4, 1)
+
+[node name="Wall Endcap" type="StaticBody3D" unique_id=2006422098]
+
+[node name="wall_half_endcap2" parent="." unique_id=688537566 instance=ExtResource("1_2ulli")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1335783105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05, 2, 0)
+shape = SubResource("BoxShape3D_ifmlk")

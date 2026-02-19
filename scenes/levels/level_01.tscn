@@ -2,6 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://dhvu58t0pfrx2" path="res://assets/dungeon_assets/scenes/wall.tscn" id="1_i2aat"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_m802k"]
+[ext_resource type="PackedScene" uid="uid://fou1wbstrid1" path="res://assets/dungeon_assets/scenes/wall_corner.tscn" id="3_50wog"]
+[ext_resource type="PackedScene" uid="uid://c6170o6nesevs" path="res://assets/dungeon_assets/scenes/wall_t_split.tscn" id="4_1ey3t"]
+[ext_resource type="PackedScene" uid="uid://bbu5v6pbcc03x" path="res://assets/dungeon_assets/scenes/wall_arched_window.tscn" id="5_t0hvh"]
+[ext_resource type="PackedScene" uid="uid://bwl6nsyvgjm5x" path="res://assets/dungeon_assets/scenes/wall_doorway_open.tscn" id="6_kfebt"]
+[ext_resource type="PackedScene" uid="uid://cb6xgg20mjm5p" path="res://assets/dungeon_assets/scenes/floor_stone.tscn" id="7_t0hvh"]
+[ext_resource type="PackedScene" uid="uid://wtjui0lwjxow" path="res://assets/dungeon_assets/scenes/floor_wood.tscn" id="8_kfebt"]
+[ext_resource type="PackedScene" uid="uid://bht40fcn1qvn6" path="res://assets/dungeon_assets/scenes/wall_endcap.tscn" id="9_kfebt"]
+[ext_resource type="PackedScene" uid="uid://ddjy6l7v3mmx7" path="res://assets/dungeon_assets/scenes/stairs.tscn" id="10_r72dd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m802k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -29,174 +37,550 @@ transform = Transform3D(-0.78477633, 0.2291613, -0.575857, 0, 0.9291326, 0.36974
 light_color = Color(1, 0.9843137, 0.9529412, 1)
 shadow_enabled = true
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1951383761]
-use_collision = true
-
-[node name="Floor" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1310631923]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-size = Vector3(50, 1, 50)
-
-[node name="Floor2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=404352290]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6499996, 1.5, -9.5)
-size = Vector3(24.7, 5, 19)
-
-[node name="Floor3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=633796269]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 1, 2.9999998)
-size = Vector3(5, 2, 6)
-
-[node name="Floor4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=484897348]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.900001, 1, 1.4999998)
-size = Vector3(4.2000003, 2, 3)
-
-[node name="Floor5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1340791690]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9000006, 2, 1.4999998)
-size = Vector3(9.8, 4, 3)
-
-[node name="Wall" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1846405729]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -19.5)
-size = Vector3(40, 4, 1)
-
-[node name="Wall8" type="CSGBox3D" parent="CSGCombiner3D" unique_id=941601638]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -19.5)
-size = Vector3(40, 4, 1)
-
-[node name="Wall11" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1824345950]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9, 6, -5.0999994)
-size = Vector3(10.2, 4, 1)
-
-[node name="Wall12" type="CSGBox3D" parent="CSGCombiner3D" unique_id=283335505]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.299999, 6, -12.3)
-size = Vector3(13.400001, 4, 1)
-
-[node name="DoorwayArch2" type="CSGCylinder3D" parent="CSGCombiner3D/Wall12" unique_id=1693896147]
-transform = Transform3D(-1, -7.1054274e-15, -8.742277e-08, -8.742278e-08, -4.371139e-08, 1, -7.1054274e-15, 1, 4.371139e-08, -4.3000007, 0.5, -0.24999714)
-operation = 2
-radius = 1.0
-sides = 16
-
-[node name="DoorwayBottom2" type="CSGBox3D" parent="CSGCombiner3D/Wall12" unique_id=1607695883]
-transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, -4.3000007, -0.75, 0.050004005)
-operation = 2
-size = Vector3(2, 2.5, 1.4)
-
-[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="CSGCombiner3D/Wall12" unique_id=2078695366]
-transform = Transform3D(-1, -7.1054274e-15, -8.742277e-08, -8.742278e-08, -4.371139e-08, 1, -7.1054274e-15, 1, 4.371139e-08, 2.4000025, 0.4000001, -0.449996)
-operation = 2
-radius = 1.0
-sides = 16
-
-[node name="Wall10" type="CSGBox3D" parent="CSGCombiner3D" unique_id=164788470]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 19.5, 6, 1.5)
-size = Vector3(41, 4, 1)
-
-[node name="Wall3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=677040029]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 21.500002)
-size = Vector3(40, 4, 1)
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D/Wall3" unique_id=106036453]
-transform = Transform3D(0.99999994, 0, -3.5527137e-15, 0, -4.371138e-08, -1, 0, 0.99999994, -4.371139e-08, -14.5, 0.6999998, 0.10000038)
-operation = 2
-radius = 0.90000004
-
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D/Wall3" unique_id=1525123383]
-transform = Transform3D(0.99999994, 0, -3.5527137e-15, 0, -4.371138e-08, -1, 0, 0.99999994, -4.371139e-08, -10.5, 0.6999998, 0.10000038)
-operation = 2
-radius = 0.90000004
-
-[node name="Wall2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=949519835]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.5, 2, 1.0000004)
-size = Vector3(40, 4, 1)
-
-[node name="Wall4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=352391021]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -19.5, 2, 1.0000004)
-size = Vector3(40, 4, 1)
-
-[node name="Wall5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=734772928]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.2, 2, 1.0000004)
-size = Vector3(40, 4, 1)
-
-[node name="DoorwayBottom2" type="CSGBox3D" parent="CSGCombiner3D/Wall5" unique_id=624896917]
-transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, -11.700001, -0.75, -0.14999676)
-operation = 2
-size = Vector3(2, 2.5, 1.4)
-
-[node name="DoorwayArch2" type="CSGCylinder3D" parent="CSGCombiner3D/Wall5" unique_id=500416080]
-transform = Transform3D(-1, -7.1054274e-15, -8.742277e-08, -8.742278e-08, -4.371139e-08, 1, -7.1054274e-15, 1, 4.371139e-08, -11.700001, 0.5, -0.14999676)
-operation = 2
-radius = 1.0
-sides = 16
-
-[node name="Wall7" type="CSGBox3D" parent="CSGCombiner3D" unique_id=902497294]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.2, 2, 1.0000004)
-size = Vector3(40, 4, 1)
-
-[node name="DoorwayBottom2" type="CSGBox3D" parent="CSGCombiner3D/Wall7" unique_id=1866255168]
-transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, -11.700001, -0.75, -0.14999676)
-operation = 2
-size = Vector3(2, 2.5, 1.4)
-
-[node name="DoorwayArch2" type="CSGCylinder3D" parent="CSGCombiner3D/Wall7" unique_id=1726357477]
-transform = Transform3D(-1, -7.1054274e-15, -8.742277e-08, -8.742278e-08, -4.371139e-08, 1, -7.1054274e-15, 1, 4.371139e-08, -11.700001, 0.5, -0.14999676)
-operation = 2
-radius = 1.0
-sides = 16
-
-[node name="Wall6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2127873281]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -12.849998, 2, 5.700001)
-size = Vector3(12.3, 4, 1)
-
-[node name="DoorwayBottom" type="CSGBox3D" parent="CSGCombiner3D/Wall6" unique_id=1056338223]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
-operation = 2
-size = Vector3(2, 2.5, 1.4)
-
-[node name="DoorwayArch" type="CSGCylinder3D" parent="CSGCombiner3D/Wall6" unique_id=33504161]
-transform = Transform3D(1, 8.742278e-08, 8.742278e-08, -8.742278e-08, -4.371139e-08, 1, 8.742278e-08, -1, -4.371138e-08, 0, 0.5, 0)
-operation = 2
-radius = 1.0
-sides = 16
-
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D/Wall6" unique_id=969431904]
-transform = Transform3D(1, 8.742278e-08, 8.742278e-08, -8.742278e-08, -4.371139e-08, 1, 8.742278e-08, -1, -4.371138e-08, -3.3999996, 0.5, 4.7683716e-07)
-operation = 2
-radius = 1.0
-sides = 16
-
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGCombiner3D/Wall6" unique_id=415760901]
-transform = Transform3D(1, 8.742278e-08, 8.742278e-08, -8.742278e-08, -4.371139e-08, 1, 8.742278e-08, -1, -4.371138e-08, 3.7999983, 0.5, 9.536743e-07)
-operation = 2
-radius = 1.0
-sides = 16
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=154403571]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.85, 6, 13.600001)
-size = Vector3(14.3, 4, 16.800001)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1905983885]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.900001, 8.499998, -12.299999)
-size = Vector3(10.2, 1, 15.400001)
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGCombiner3D" unique_id=2039254465]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.8, 0, 6)
-polygon = PackedVector2Array(0, 0, 4.2000003, 2, 4.2000003, 0)
-depth = 3.0
-
-[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="CSGCombiner3D" unique_id=1834019724]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14, 2, 0)
-polygon = PackedVector2Array(0, 0, 4.2000003, 2, 4.2000003, 0)
-depth = 3.0
-
-[node name="Wall9" parent="CSGCombiner3D" unique_id=588016428 instance=ExtResource("1_i2aat")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7, 0, -19)
-
-[node name="Wall13" parent="CSGCombiner3D" unique_id=1210887635 instance=ExtResource("1_i2aat")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7, 0, -19)
-
 [node name="ProtoController" parent="." unique_id=125454665 instance=ExtResource("1_m802k")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -13.1, -7.1525574e-07, -12.3)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -13.900001, -7.1525574e-07, 0.8999996)
 can_sprint = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=993234898]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2, 2.1, 14.3)
 light_specular = 0.0
 omni_range = 15.8
+
+[node name="Set Dress" type="Node" parent="." unique_id=706042836]
+
+[node name="Wall" parent="Set Dress" unique_id=588016428 instance=ExtResource("1_i2aat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -19)
+
+[node name="Wall3" parent="Set Dress" unique_id=98835143 instance=ExtResource("1_i2aat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -19)
+
+[node name="Wall2" parent="Set Dress" unique_id=2120913579 instance=ExtResource("1_i2aat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -19)
+
+[node name="Wall4" parent="Set Dress" unique_id=1675277971 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22, 0, -15)
+
+[node name="Wall5" parent="Set Dress" unique_id=1406371210 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22, 0, -11)
+
+[node name="Wall6" parent="Set Dress" unique_id=1041175518 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22, 0, -7)
+
+[node name="Wall7" parent="Set Dress" unique_id=1408832602 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22, 0, -3)
+
+[node name="Wall8" parent="Set Dress" unique_id=415524511 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22, 0, 1)
+
+[node name="Wall15" parent="Set Dress" unique_id=180413642 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6, 0, -15)
+
+[node name="Wall16" parent="Set Dress" unique_id=988096114 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6, 0, -11)
+
+[node name="Wall17" parent="Set Dress" unique_id=2117121947 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6, 0, -7)
+
+[node name="Wall18" parent="Set Dress" unique_id=1215244874 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6, 0, -3)
+
+[node name="Wall19" parent="Set Dress" unique_id=1723765969 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6, 0, 1)
+
+[node name="Wall9" parent="Set Dress" unique_id=1049144942 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22, 0, 9)
+
+[node name="Wall10" parent="Set Dress" unique_id=1992463483 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22, 0, 13)
+
+[node name="Wall11" parent="Set Dress" unique_id=1981645965 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22, 0, 17)
+
+[node name="Wall13" parent="Set Dress" unique_id=1192674749 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6, 0, 9)
+
+[node name="Wall37" parent="Set Dress" unique_id=455037258 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 18, 0, 21)
+
+[node name="Wall38" parent="Set Dress" unique_id=1860963747 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14, 0, 21)
+
+[node name="Wall39" parent="Set Dress" unique_id=92326387 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 10, 0, 21)
+
+[node name="Wall40" parent="Set Dress" unique_id=613246668 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6, 0, 21)
+
+[node name="Wall41" parent="Set Dress" unique_id=1572061573 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2, 0, 21)
+
+[node name="Wall42" parent="Set Dress" unique_id=982438731 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2, 0, 21)
+
+[node name="Wall20" parent="Set Dress" unique_id=244396132 instance=ExtResource("1_i2aat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1.3, 6.8)
+
+[node name="Wall21" parent="Set Dress" unique_id=889378818 instance=ExtResource("1_i2aat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -1.3, 6.8)
+
+[node name="Wall22" parent="Set Dress" unique_id=67895529 instance=ExtResource("1_i2aat")]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="Wall32" parent="Set Dress" unique_id=1496280103 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1.2, 0, -1, 0, -4.371139e-08, 22, 0, 4)
+
+[node name="Wall33" parent="Set Dress" unique_id=2081838651 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1.2, 0, -1, 0, -4.371139e-08, 22, 0, 8)
+
+[node name="Wall23" parent="Set Dress" unique_id=1160070952 instance=ExtResource("1_i2aat")]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 14, 0, 0)
+
+[node name="Wall43" parent="Set Dress" unique_id=1372231860 instance=ExtResource("1_i2aat")]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="Wall24" parent="Set Dress" unique_id=2132810500 instance=ExtResource("1_i2aat")]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 6.2999997, 0, 4)
+
+[node name="Wall31" parent="Set Dress" unique_id=1556720155 instance=ExtResource("1_i2aat")]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 10.299999, 0, 4)
+
+[node name="Wall25" parent="Set Dress" unique_id=163271394 instance=ExtResource("1_i2aat")]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, -1.7, 0, 0)
+
+[node name="Wall26" parent="Set Dress" unique_id=704848315 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1.2, 0, -1, 0, -4.371139e-08, -5.7, 0, -4)
+
+[node name="Wall27" parent="Set Dress" unique_id=399291403 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1.2, 0, -1, 0, -4.371139e-08, -5.7, 0, -8)
+
+[node name="Wall28" parent="Set Dress" unique_id=559972573 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1.2, 0, -1, 0, -4.371139e-08, -5.7, 0, -12)
+
+[node name="Wall29" parent="Set Dress" unique_id=2068937579 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1.2, 0, -1, 0, -4.371139e-08, -5.7, 0, -16)
+
+[node name="Wall30" parent="Set Dress" unique_id=1322678051 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1.2, 0, -1, 0, -4.371139e-08, -5.7, 0, -20)
+
+[node name="Wall14" parent="Set Dress" unique_id=1913895270 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6, 0, 17)
+
+[node name="Wall34" parent="Set Dress" unique_id=2076743461 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 22, 0, 13)
+
+[node name="Wall36" parent="Set Dress" unique_id=554899117 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 22, 0, 9)
+
+[node name="Wall35" parent="Set Dress" unique_id=210428404 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 22, 0, 17)
+
+[node name="Wall12" parent="Set Dress" unique_id=1616317969 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -14, 0, 21)
+
+[node name="Wall Corner" parent="Set Dress" unique_id=2019825741 instance=ExtResource("3_50wog")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -19)
+
+[node name="Wall T-Split" parent="Set Dress" unique_id=1914973275 instance=ExtResource("4_1ey3t")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22, 0, 5)
+
+[node name="Wall T-Split3" parent="Set Dress" unique_id=1696009957 instance=ExtResource("4_1ey3t")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6, 0, 5)
+
+[node name="Wall T-Split2" parent="Set Dress" unique_id=1214346393 instance=ExtResource("4_1ey3t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6, 0, 21)
+
+[node name="Wall Corner2" parent="Set Dress" unique_id=66203725 instance=ExtResource("3_50wog")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22, 0, -19)
+
+[node name="Wall Corner3" parent="Set Dress" unique_id=2023842908 instance=ExtResource("3_50wog")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -22, 0, 21)
+
+[node name="Wall Corner6" parent="Set Dress" unique_id=1142713372 instance=ExtResource("3_50wog")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -22, 0, 21)
+
+[node name="Wall Corner7" parent="Set Dress" unique_id=971725940 instance=ExtResource("3_50wog")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 22, 0, 21)
+
+[node name="Wall Arched Window" parent="Set Dress" unique_id=329442019 instance=ExtResource("5_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 21)
+
+[node name="Wall Arched Window2" parent="Set Dress" unique_id=1511407901 instance=ExtResource("5_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 21)
+
+[node name="Wall Arched Window3" parent="Set Dress" unique_id=954154752 instance=ExtResource("5_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 5)
+
+[node name="Wall Arched Window4" parent="Set Dress" unique_id=1654701972 instance=ExtResource("5_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 5)
+
+[node name="Wall Doorway Open" parent="Set Dress" unique_id=479598827 instance=ExtResource("6_kfebt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6, 0, 13)
+
+[node name="Wall Doorway Open2" parent="Set Dress" unique_id=805787596 instance=ExtResource("6_kfebt")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -14, 0, 5)
+
+[node name="Floor Stone" parent="Set Dress" unique_id=1583515003 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 3)
+
+[node name="Floor Stone2" parent="Set Dress" unique_id=1669753281 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 3)
+
+[node name="Floor Stone3" parent="Set Dress" unique_id=1006811847 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 3)
+
+[node name="Floor Stone4" parent="Set Dress" unique_id=1798773018 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 3)
+
+[node name="Floor Stone6" parent="Set Dress" unique_id=1121352292 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -1)
+
+[node name="Floor Stone7" parent="Set Dress" unique_id=842053493 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -1)
+
+[node name="Floor Stone8" parent="Set Dress" unique_id=1204578613 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -1)
+
+[node name="Floor Stone9" parent="Set Dress" unique_id=2111414828 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -1)
+
+[node name="Floor Stone11" parent="Set Dress" unique_id=947084223 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -5)
+
+[node name="Floor Stone12" parent="Set Dress" unique_id=514420710 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -5)
+
+[node name="Floor Stone13" parent="Set Dress" unique_id=2004048379 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -5)
+
+[node name="Floor Stone14" parent="Set Dress" unique_id=1013421299 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -5)
+
+[node name="Floor Stone16" parent="Set Dress" unique_id=316838404 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -9)
+
+[node name="Floor Stone17" parent="Set Dress" unique_id=332610874 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -9)
+
+[node name="Floor Stone18" parent="Set Dress" unique_id=1004833576 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -9)
+
+[node name="Floor Stone19" parent="Set Dress" unique_id=1995483452 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -9)
+
+[node name="Floor Stone21" parent="Set Dress" unique_id=2035228467 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -13)
+
+[node name="Floor Stone22" parent="Set Dress" unique_id=1635424643 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -13)
+
+[node name="Floor Stone23" parent="Set Dress" unique_id=1304570862 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -13)
+
+[node name="Floor Stone24" parent="Set Dress" unique_id=1128361063 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -13)
+
+[node name="Floor Stone26" parent="Set Dress" unique_id=253363026 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -17)
+
+[node name="Floor Stone27" parent="Set Dress" unique_id=1197617639 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -17)
+
+[node name="Floor Stone28" parent="Set Dress" unique_id=2090334857 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -17)
+
+[node name="Floor Stone29" parent="Set Dress" unique_id=2091297377 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -17)
+
+[node name="Floor Stone33" parent="Set Dress" unique_id=1864793272 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 19)
+
+[node name="Floor Stone34" parent="Set Dress" unique_id=272919664 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 15)
+
+[node name="Floor Stone35" parent="Set Dress" unique_id=1491221185 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 11)
+
+[node name="Floor Stone36" parent="Set Dress" unique_id=457381079 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 7)
+
+[node name="Floor Stone37" parent="Set Dress" unique_id=679193552 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3)
+
+[node name="Floor Stone38" parent="Set Dress" unique_id=1521604164 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1)
+
+[node name="Floor Stone75" parent="Set Dress" unique_id=1443270138 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, -2)
+
+[node name="Floor Stone76" parent="Set Dress" unique_id=2008389130 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -2)
+
+[node name="Floor Stone77" parent="Set Dress" unique_id=778836287 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, -2)
+
+[node name="Floor Stone78" parent="Set Dress" unique_id=1705167882 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, -2)
+
+[node name="Floor Stone105" parent="Set Dress" unique_id=2141569530 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 2)
+
+[node name="Floor Stone106" parent="Set Dress" unique_id=1339173427 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, 2)
+
+[node name="Floor Stone79" parent="Set Dress" unique_id=1872480434 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 4, -2)
+
+[node name="Floor Stone80" parent="Set Dress" unique_id=530211015 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 4, -2)
+
+[node name="Floor Stone81" parent="Set Dress" unique_id=27811787 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 4, -2)
+
+[node name="Floor Stone82" parent="Set Dress" unique_id=377130584 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, -6)
+
+[node name="Floor Stone83" parent="Set Dress" unique_id=1413165643 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -6)
+
+[node name="Floor Stone84" parent="Set Dress" unique_id=2001036224 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, -6)
+
+[node name="Floor Stone85" parent="Set Dress" unique_id=1730887471 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, -6)
+
+[node name="Floor Stone89" parent="Set Dress" unique_id=1184909508 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, -10)
+
+[node name="Floor Stone90" parent="Set Dress" unique_id=1318622387 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -10)
+
+[node name="Floor Stone91" parent="Set Dress" unique_id=884459310 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, -10)
+
+[node name="Floor Stone92" parent="Set Dress" unique_id=1854407672 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, -10)
+
+[node name="Floor Stone93" parent="Set Dress" unique_id=1978467987 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, -14)
+
+[node name="Floor Stone94" parent="Set Dress" unique_id=615921547 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -14)
+
+[node name="Floor Stone95" parent="Set Dress" unique_id=2022498063 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, -14)
+
+[node name="Floor Stone96" parent="Set Dress" unique_id=581710757 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, -14)
+
+[node name="Floor Stone97" parent="Set Dress" unique_id=588224432 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, -18)
+
+[node name="Floor Stone98" parent="Set Dress" unique_id=1278030654 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -18)
+
+[node name="Floor Stone99" parent="Set Dress" unique_id=1140268535 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, -18)
+
+[node name="Floor Stone100" parent="Set Dress" unique_id=1842830213 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, -18)
+
+[node name="Floor Stone86" parent="Set Dress" unique_id=9670708 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 4, -6)
+
+[node name="Floor Stone87" parent="Set Dress" unique_id=1770585974 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 4, -6)
+
+[node name="Floor Stone88" parent="Set Dress" unique_id=1496294501 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 4, -6)
+
+[node name="Floor Stone39" parent="Set Dress" unique_id=952134612 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
+
+[node name="Floor Stone40" parent="Set Dress" unique_id=1963838287 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+
+[node name="Floor Stone41" parent="Set Dress" unique_id=1693713723 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11)
+
+[node name="Floor Stone42" parent="Set Dress" unique_id=1511738578 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+
+[node name="Floor Stone43" parent="Set Dress" unique_id=446755043 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="Floor Stone44" parent="Set Dress" unique_id=1650729067 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="Floor Stone45" parent="Set Dress" unique_id=1954456151 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 19)
+
+[node name="Floor Stone46" parent="Set Dress" unique_id=1917694938 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 15)
+
+[node name="Floor Stone47" parent="Set Dress" unique_id=1553287540 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 11)
+
+[node name="Floor Stone48" parent="Set Dress" unique_id=1064692009 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 7)
+
+[node name="Floor Stone49" parent="Set Dress" unique_id=1509900973 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
+
+[node name="Floor Stone50" parent="Set Dress" unique_id=2105246679 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1)
+
+[node name="Floor Stone51" parent="Set Dress" unique_id=1441397 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 19)
+
+[node name="Floor Stone52" parent="Set Dress" unique_id=108753374 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 15)
+
+[node name="Floor Stone53" parent="Set Dress" unique_id=1270699931 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 11)
+
+[node name="Floor Stone54" parent="Set Dress" unique_id=84378627 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 7)
+
+[node name="Floor Stone55" parent="Set Dress" unique_id=456633272 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 3)
+
+[node name="Floor Stone56" parent="Set Dress" unique_id=758044154 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -1)
+
+[node name="Floor Stone57" parent="Set Dress" unique_id=130749638 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 19)
+
+[node name="Floor Stone58" parent="Set Dress" unique_id=2019866102 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 15)
+
+[node name="Floor Stone59" parent="Set Dress" unique_id=1080770287 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 11)
+
+[node name="Floor Stone60" parent="Set Dress" unique_id=1180952484 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 7)
+
+[node name="Floor Stone61" parent="Set Dress" unique_id=2129422618 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 3)
+
+[node name="Floor Stone62" parent="Set Dress" unique_id=328860658 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -1)
+
+[node name="Floor Stone63" parent="Set Dress" unique_id=749824944 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 19)
+
+[node name="Floor Stone64" parent="Set Dress" unique_id=1083801013 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 15)
+
+[node name="Floor Stone65" parent="Set Dress" unique_id=1086813636 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 11)
+
+[node name="Floor Stone66" parent="Set Dress" unique_id=1217307393 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 7)
+
+[node name="Floor Stone101" parent="Set Dress" unique_id=1786735975 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.999999, 1.9, 0.79999983)
+
+[node name="Floor Stone102" parent="Set Dress" unique_id=927519540 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1.9, 0.7999997)
+
+[node name="Floor Stone103" parent="Set Dress" unique_id=1473199362 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.999999, 1.9, 4.7999997)
+
+[node name="Floor Stone104" parent="Set Dress" unique_id=1783780575 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1.9, 4.7999997)
+
+[node name="Floor Stone67" parent="Set Dress" unique_id=595433255 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 3)
+
+[node name="Floor Stone68" parent="Set Dress" unique_id=1871320652 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -1)
+
+[node name="Floor Stone69" parent="Set Dress" unique_id=2065922739 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 19)
+
+[node name="Floor Stone70" parent="Set Dress" unique_id=1641574298 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 15)
+
+[node name="Floor Stone71" parent="Set Dress" unique_id=101065923 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 11)
+
+[node name="Floor Stone72" parent="Set Dress" unique_id=1712269640 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 7)
+
+[node name="Floor Stone73" parent="Set Dress" unique_id=2112172003 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 3)
+
+[node name="Floor Stone74" parent="Set Dress" unique_id=1448080353 instance=ExtResource("7_t0hvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -1)
+
+[node name="Floor Wood" parent="Set Dress" unique_id=405074498 instance=ExtResource("8_kfebt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 7)
+
+[node name="Floor Wood2" parent="Set Dress" unique_id=772928336 instance=ExtResource("8_kfebt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 7)
+
+[node name="Floor Wood3" parent="Set Dress" unique_id=712005653 instance=ExtResource("8_kfebt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 7)
+
+[node name="Floor Wood4" parent="Set Dress" unique_id=2138923689 instance=ExtResource("8_kfebt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 7)
+
+[node name="Floor Wood5" parent="Set Dress" unique_id=791607083 instance=ExtResource("8_kfebt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 11)
+
+[node name="Floor Wood6" parent="Set Dress" unique_id=1358833914 instance=ExtResource("8_kfebt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 11)
+
+[node name="Floor Wood7" parent="Set Dress" unique_id=608549205 instance=ExtResource("8_kfebt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 11)
+
+[node name="Floor Wood8" parent="Set Dress" unique_id=971896803 instance=ExtResource("8_kfebt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 11)
+
+[node name="Floor Wood9" parent="Set Dress" unique_id=920086802 instance=ExtResource("8_kfebt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 15)
+
+[node name="Floor Wood10" parent="Set Dress" unique_id=1519674445 instance=ExtResource("8_kfebt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 15)
+
+[node name="Floor Wood11" parent="Set Dress" unique_id=1745267145 instance=ExtResource("8_kfebt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 15)
+
+[node name="Floor Wood12" parent="Set Dress" unique_id=459174352 instance=ExtResource("8_kfebt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 15)
+
+[node name="Floor Wood13" parent="Set Dress" unique_id=305634142 instance=ExtResource("8_kfebt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 19)
+
+[node name="Floor Wood14" parent="Set Dress" unique_id=776185743 instance=ExtResource("8_kfebt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 19)
+
+[node name="Floor Wood15" parent="Set Dress" unique_id=1590630957 instance=ExtResource("8_kfebt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 19)
+
+[node name="Floor Wood16" parent="Set Dress" unique_id=1268353145 instance=ExtResource("8_kfebt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 19)
+
+[node name="Wall Corner4" parent="Set Dress" unique_id=576180033 instance=ExtResource("3_50wog")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1.2, 0, -8.742278e-08, 0, -1, 2.3, 0, 4)
+
+[node name="Wall Corner5" parent="Set Dress" unique_id=1446271725 instance=ExtResource("3_50wog")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1.2, 0, 1.7484555e-07, 0, 1, 2.3, 0, 2.8312206e-07)
+
+[node name="Wall Endcap" parent="Set Dress" unique_id=2006422098 instance=ExtResource("9_kfebt")]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 14.3, 0, 4)
+
+[node name="Stairs" parent="Set Dress" unique_id=47099734 instance=ExtResource("10_r72dd")]
+transform = Transform3D(-6.818976e-08, 0, -1, 0, 1.21, 0, 1.5600001, 0, -4.371139e-08, 12.8, 0, 5.4)
+
+[node name="Stairs2" parent="Set Dress" unique_id=1017053289 instance=ExtResource("10_r72dd")]
+transform = Transform3D(-7.9554724e-08, 0, 1.4, 0, 1.4641001, 0, -1.8199999, 0, -6.119594e-08, 12.1, 1.7, 2.0000002)
+
+[node name="Wall Corner8" parent="Set Dress" unique_id=1538684225 instance=ExtResource("3_50wog")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1.2, 0, 8.742278e-08, 0, -1, -5.7, 0, 0)
+
+[node name="Wall T-Split4" parent="Set Dress" unique_id=1905545058 instance=ExtResource("4_1ey3t")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1.2, 0, 1, 0, -4.371139e-08, 22, -1.5646219e-07, 0)
+
+[node name="Wall Endcap2" parent="Set Dress" unique_id=1422686668 instance=ExtResource("9_kfebt")]
+transform = Transform3D(-1.2, 0, -8.742278e-08, 0, 1, 0, 1.04907336e-07, 0, -1, 11.600001, -1.3000001, 6.8)

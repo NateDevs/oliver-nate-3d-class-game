@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://btp61lgehqjsv"]
+
+[ext_resource type="PackedScene" uid="uid://dm31qjnvwfo3t" path="res://assets/dungeon_assets/props/keyring.glb" id="1_ot1rh"]
+
+[node name="Keyring" type="Node3D" unique_id=1910472824]
+
+[node name="keyring2" parent="." unique_id=1716006935 instance=ExtResource("1_ot1rh")]

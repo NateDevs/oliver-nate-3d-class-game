@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dsdwn0vc6jw3i"]
+
+[ext_resource type="PackedScene" uid="uid://ymaftb2t4kwx" path="res://assets/dungeon_assets/building/wall_doorway.glb" id="1_qp85h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wcq7n"]
+size = Vector3(4, 4, 1)
+
+[node name="Wall Closed Door" type="StaticBody3D" unique_id=117387758]
+
+[node name="wall_doorway2" parent="." unique_id=669945483 instance=ExtResource("1_qp85h")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=253120314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_wcq7n")
