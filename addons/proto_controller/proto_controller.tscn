@@ -16,6 +16,9 @@ height = 1.8
 [node name="ProtoController" type="CharacterBody3D" unique_id=923786463]
 collision_layer = 2
 script = ExtResource("1_ucva2")
+can_sprint = true
+gravity_multiplier = 5.0
+jump_velocity = 11.0
 input_left = "move_left"
 input_right = "move_right"
 input_forward = "move_forward"

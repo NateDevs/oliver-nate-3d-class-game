@@ -2,38 +2,44 @@
 
 [ext_resource type="PackedScene" uid="uid://bkwjy8ek3wchf" path="res://assets/dungeon_assets/building/wall_half_endcap.glb" id="1_hwepm"]
 
-[node name="Stairs" type="StaticBody3D" unique_id=47099734]
+[node name="Stairs" type="Node3D" unique_id=599106340]
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="." unique_id=570051903]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, 0, 1.6)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2, 0, 1.6)
 visible = false
 use_collision = true
-polygon = PackedVector2Array(2.2, 1.6, 3.1000001, 1.6, 3.1000001, 0, 0, 0)
-depth = 2.0
+polygon = PackedVector2Array(2.85, 2.0249999, 3.6999998, 2.0249999, 3.7, 0, 0, 0)
+depth = 4.0
 
 [node name="wall_half_endcap2" parent="." unique_id=688537566 instance=ExtResource("1_hwepm")]
-transform = Transform3D(-2.1855694e-08, 0.5, 2.1855694e-08, 0, -2.1855694e-08, 0.5, 0.5, 2.1855694e-08, 9.553427e-16, -1, 0.1, 1.6)
+transform = Transform3D(-2.1855694e-08, 1, 2.1855694e-08, 0, -4.371139e-08, 0.5, 0.5, 4.371139e-08, 9.553427e-16, -2, 0.1, 1.6)
 
 [node name="wall_half_endcap3" parent="." unique_id=626227497 instance=ExtResource("1_hwepm")]
-transform = Transform3D(-2.1855694e-08, 0.5, 2.1855694e-08, 0, -2.1855694e-08, 0.5, 0.5, 2.1855694e-08, 9.553427e-16, -1, 0.3, 1.3)
+transform = Transform3D(-2.1855694e-08, 1, 2.1855694e-08, 0, -4.371139e-08, 0.5, 0.5, 4.371139e-08, 9.553427e-16, -2, 0.3, 1.3)
 
 [node name="wall_half_endcap4" parent="." unique_id=1267498861 instance=ExtResource("1_hwepm")]
-transform = Transform3D(-2.1855694e-08, 0.5, 2.1855694e-08, 0, -2.1855694e-08, 0.5, 0.5, 2.1855694e-08, 9.553427e-16, -1, 0.5, 0.99999994)
+transform = Transform3D(-2.1855694e-08, 1, 2.1855694e-08, 0, -4.371139e-08, 0.5, 0.5, 4.371139e-08, 9.553427e-16, -2, 0.5, 0.99999994)
 
 [node name="wall_half_endcap5" parent="." unique_id=2128935191 instance=ExtResource("1_hwepm")]
-transform = Transform3D(-2.1855694e-08, 0.5, 2.1855694e-08, 0, -2.1855694e-08, 0.5, 0.5, 2.1855694e-08, 9.553427e-16, -1, 0.7, 0.6999999)
+transform = Transform3D(-2.1855694e-08, 1, 2.1855694e-08, 0, -4.371139e-08, 0.5, 0.5, 4.371139e-08, 9.553427e-16, -2, 0.7, 0.6999999)
 
 [node name="wall_half_endcap6" parent="." unique_id=1140825888 instance=ExtResource("1_hwepm")]
-transform = Transform3D(-2.1855694e-08, 0.5, 2.1855694e-08, 0, -2.1855694e-08, 0.5, 0.5, 2.1855694e-08, 9.553427e-16, -1, 0.9, 0.39999992)
+transform = Transform3D(-2.1855694e-08, 1, 2.1855694e-08, 0, -4.371139e-08, 0.5, 0.5, 4.371139e-08, 9.553427e-16, -2, 0.9, 0.39999992)
 
 [node name="wall_half_endcap7" parent="." unique_id=1816684371 instance=ExtResource("1_hwepm")]
-transform = Transform3D(-2.1855694e-08, 0.5, 2.1855694e-08, 0, -2.1855694e-08, 0.5, 0.5, 2.1855694e-08, 9.553427e-16, -1, 1.1, 0.099999905)
+transform = Transform3D(-2.1855694e-08, 1, 2.1855694e-08, 0, -4.371139e-08, 0.5, 0.5, 4.371139e-08, 9.553427e-16, -2, 1.1, 0.099999905)
 
 [node name="wall_half_endcap8" parent="." unique_id=1196243980 instance=ExtResource("1_hwepm")]
-transform = Transform3D(-2.1855694e-08, 0.5, 2.1855694e-08, 0, -2.1855694e-08, 0.5, 0.5, 2.1855694e-08, 9.553427e-16, -1, 1.3000001, -0.2000001)
+transform = Transform3D(-2.1855694e-08, 1, 2.1855694e-08, 0, -4.371139e-08, 0.5, 0.5, 4.371139e-08, 9.553427e-16, -2, 1.3000001, -0.2000001)
 
 [node name="wall_half_endcap9" parent="." unique_id=282924682 instance=ExtResource("1_hwepm")]
-transform = Transform3D(-2.1855694e-08, 0.5, 2.1855694e-08, 0, -2.1855694e-08, 0.5, 0.5, 2.1855694e-08, 9.553427e-16, -1, 1.3000001, -0.2000001)
+transform = Transform3D(-2.1855694e-08, 1, 2.1855694e-08, 0, -4.371139e-08, 0.5, 0.5, 4.371139e-08, 9.553427e-16, -2, 1.3000001, -0.2000001)
 
 [node name="wall_half_endcap10" parent="." unique_id=405192425 instance=ExtResource("1_hwepm")]
-transform = Transform3D(-2.1855694e-08, 0.5, 2.1855694e-08, 0, -2.1855694e-08, 0.5, 0.5, 2.1855694e-08, 9.553427e-16, -1, 1.5000001, -0.5000001)
+transform = Transform3D(-2.1855694e-08, 1, 2.1855694e-08, 0, -4.371139e-08, 0.5, 0.5, 4.371139e-08, 9.553427e-16, -2, 1.5000001, -0.5000001)
+
+[node name="wall_half_endcap11" parent="." unique_id=2017139637 instance=ExtResource("1_hwepm")]
+transform = Transform3D(-2.1855694e-08, 1, 2.1855694e-08, 0, -4.371139e-08, 0.5, 0.5, 4.371139e-08, 9.553427e-16, -2, 1.7000002, -0.80000013)
+
+[node name="wall_half_endcap12" parent="." unique_id=2070443182 instance=ExtResource("1_hwepm")]
+transform = Transform3D(-2.1855694e-08, 1, 2.1855694e-08, 0, -4.371139e-08, 0.5, 0.5, 4.371139e-08, 9.553427e-16, -2, 1.9000002, -1.1000001)
