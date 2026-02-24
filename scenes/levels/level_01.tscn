@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dpsp0mjy3n3tk" path="res://assets/dungeon_assets/scenes/crates_stacked.tscn" id="23_lswbx"]
 [ext_resource type="PackedScene" uid="uid://cwqh8cskjhv7p" path="res://assets/dungeon_assets/scenes/candles.tscn" id="24_w4kkx"]
 [ext_resource type="PackedScene" uid="uid://dj60hkdik4hsh" path="res://assets/dungeon_assets/scenes/table_small.tscn" id="25_mhiu8"]
+[ext_resource type="PackedScene" uid="uid://rqaedh5hn4mc" path="res://assets/meshes/healthpack.glb" id="26_lswbx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m802k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -56,7 +57,6 @@ shadow_enabled = true
 
 [node name="ProtoController" parent="." unique_id=125454665 instance=ExtResource("1_m802k")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -13.900001, -7.1525574e-07, 0.8999996)
-can_sprint = true
 
 [node name="Set Dress" type="Node" parent="." unique_id=706042836]
 
@@ -980,3 +980,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 4, -10)
 
 [node name="Floor Wood28" parent="Set Dress" unique_id=2109016871 instance=ExtResource("8_kfebt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 4, -6)
+
+[node name="healthpack" parent="." unique_id=740283848 instance=ExtResource("26_lswbx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.300001, 1.2, 0.8)
