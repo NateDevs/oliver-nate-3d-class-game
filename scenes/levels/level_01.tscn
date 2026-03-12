@@ -52,7 +52,7 @@ fog_height = 0.5
 fog_height_density = 1.4757
 fog_depth_curve = 0.5000003
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.005
+volumetric_fog_density = 0.0714
 volumetric_fog_sky_affect = 0.255
 adjustment_enabled = true
 adjustment_contrast = 1.045
@@ -73,6 +73,9 @@ emission_energy_multiplier = 13.75
 [sub_resource type="BoxMesh" id="BoxMesh_qy4h0"]
 lightmap_size_hint = Vector2i(14, 21)
 add_uv2 = true
+
+[sub_resource type="FogMaterial" id="FogMaterial_lswbx"]
+density = -1.9045
 
 [node name="Level 01" type="Node3D" unique_id=2112781780]
 
@@ -1105,3 +1108,8 @@ light_data = ExtResource("26_lswbx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.8, 1.5, 7.5)
 material_override = SubResource("StandardMaterial3D_3t34l")
 mesh = SubResource("BoxMesh_qy4h0")
+
+[node name="FogVolume" type="FogVolume" parent="." unique_id=112856414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.000001, 1.7, 13.15)
+size = Vector3(16.4, 4.4, 15.5)
+material = SubResource("FogMaterial_lswbx")
