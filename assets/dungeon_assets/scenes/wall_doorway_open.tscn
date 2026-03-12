@@ -49,12 +49,15 @@ mesh = SubResource("ArrayMesh_qe6oa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=115192409]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.4250001, 0)
+visible = false
 shape = SubResource("BoxShape3D_mcv0s")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1467006705]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.4250001, 0)
+visible = false
 shape = SubResource("BoxShape3D_mcv0s")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=2066196897]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4250002, 0)
+visible = false
 shape = SubResource("BoxShape3D_v3yd2")

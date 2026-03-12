@@ -12,4 +12,5 @@ radius = 0.90000004
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=353836070]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01875, 0)
+visible = false
 shape = SubResource("CylinderShape3D_e4l6x")

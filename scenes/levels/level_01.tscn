@@ -39,21 +39,40 @@ background_mode = 2
 background_color = Color(0.49119127, 0.4911908, 0.49119115, 1)
 sky = SubResource("Sky_i2aat")
 tonemap_mode = 3
+ssr_enabled = true
 ssao_enabled = true
 sdfgi_use_occlusion = true
-glow_normalized = true
-glow_bloom = 0.5
-volumetric_fog_density = 0.0055
+glow_enabled = true
+glow_bloom = 0.1
+fog_mode = 1
+fog_sun_scatter = 0.02
+fog_density = 0.2233
+fog_aerial_perspective = 0.796
+fog_height = 0.5
+fog_height_density = 1.4757
+fog_depth_curve = 0.5000003
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.005
+volumetric_fog_sky_affect = 0.255
+adjustment_enabled = true
+adjustment_contrast = 1.045
+adjustment_saturation = 1.28
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uujh0"]
-albedo_color = Color(0.09, 0.09, 0.09, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3t34l"]
-albedo_color = Color(1, 0, 0.9333334, 1)
+albedo_color = Color(0.14901961, 0.14117648, 0.07058824, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lswbx"]
 metallic = 1.0
 roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3t34l"]
+emission_enabled = true
+emission = Color(0, 0.4833331, 1, 1)
+emission_energy_multiplier = 13.75
+
+[sub_resource type="BoxMesh" id="BoxMesh_qy4h0"]
+lightmap_size_hint = Vector2i(14, 21)
+add_uv2 = true
 
 [node name="Level 01" type="Node3D" unique_id=2112781780]
 
@@ -62,7 +81,6 @@ environment = SubResource("Environment_2djvx")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1951183747]
 transform = Transform3D(-0.6197791, -0.29016852, 0.72916126, 1.1694078e-08, 0.9291326, 0.36974674, -0.7847765, 0.22916134, -0.575857, 0, 0, 0)
-visible = false
 light_color = Color(1, 0.9843137, 0.9529412, 1)
 light_angular_distance = 0.5
 shadow_enabled = true
@@ -258,292 +276,292 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -14,
 [node name="Floor Stone" parent="Set Dress" unique_id=1583515003 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 3)
 
-[node name="Floor Stone2" parent="Set Dress" unique_id=7120140 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone2" parent="Set Dress" unique_id=660001400 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 3)
 
-[node name="Floor Stone3" parent="Set Dress" unique_id=1117453989 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone3" parent="Set Dress" unique_id=947196056 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 3)
 
-[node name="Floor Stone4" parent="Set Dress" unique_id=350787669 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone4" parent="Set Dress" unique_id=167985921 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 3)
 
-[node name="Floor Stone6" parent="Set Dress" unique_id=1714654062 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone6" parent="Set Dress" unique_id=1491233596 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -1)
 
-[node name="Floor Stone7" parent="Set Dress" unique_id=689640484 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone7" parent="Set Dress" unique_id=1160884586 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -1)
 
-[node name="Floor Stone8" parent="Set Dress" unique_id=378286789 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone8" parent="Set Dress" unique_id=141638011 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -1)
 
-[node name="Floor Stone9" parent="Set Dress" unique_id=1060525369 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone9" parent="Set Dress" unique_id=759280530 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -1)
 
-[node name="Floor Stone11" parent="Set Dress" unique_id=1053778402 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone11" parent="Set Dress" unique_id=139704172 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -5)
 
-[node name="Floor Stone12" parent="Set Dress" unique_id=1277428310 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone12" parent="Set Dress" unique_id=1542735145 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -5)
 
-[node name="Floor Stone13" parent="Set Dress" unique_id=361299763 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone13" parent="Set Dress" unique_id=536237667 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -5)
 
-[node name="Floor Stone14" parent="Set Dress" unique_id=1295454570 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone14" parent="Set Dress" unique_id=1726220235 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -5)
 
-[node name="Floor Stone16" parent="Set Dress" unique_id=444522778 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone16" parent="Set Dress" unique_id=683378289 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -9)
 
-[node name="Floor Stone17" parent="Set Dress" unique_id=1649194995 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone17" parent="Set Dress" unique_id=539663692 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -9)
 
-[node name="Floor Stone18" parent="Set Dress" unique_id=998107642 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone18" parent="Set Dress" unique_id=219527542 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -9)
 
-[node name="Floor Stone19" parent="Set Dress" unique_id=1731647260 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone19" parent="Set Dress" unique_id=1169507212 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -9)
 
-[node name="Floor Stone21" parent="Set Dress" unique_id=1770946911 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone21" parent="Set Dress" unique_id=832792228 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -13)
 
-[node name="Floor Stone22" parent="Set Dress" unique_id=1342294692 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone22" parent="Set Dress" unique_id=1544405379 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -13)
 
-[node name="Floor Stone23" parent="Set Dress" unique_id=1015805422 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone23" parent="Set Dress" unique_id=343984152 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -13)
 
-[node name="Floor Stone24" parent="Set Dress" unique_id=616504959 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone24" parent="Set Dress" unique_id=519665606 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -13)
 
-[node name="Floor Stone26" parent="Set Dress" unique_id=1800232218 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone26" parent="Set Dress" unique_id=1949885402 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -17)
 
-[node name="Floor Stone27" parent="Set Dress" unique_id=1446052186 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone27" parent="Set Dress" unique_id=1498870418 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -17)
 
-[node name="Floor Stone28" parent="Set Dress" unique_id=705473504 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone28" parent="Set Dress" unique_id=1558660751 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -17)
 
-[node name="Floor Stone29" parent="Set Dress" unique_id=12710925 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone29" parent="Set Dress" unique_id=495807331 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -17)
 
-[node name="Floor Stone33" parent="Set Dress" unique_id=555171024 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone33" parent="Set Dress" unique_id=1190130106 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 19)
 
-[node name="Floor Stone34" parent="Set Dress" unique_id=293954773 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone34" parent="Set Dress" unique_id=1683193973 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 15)
 
-[node name="Floor Stone35" parent="Set Dress" unique_id=759048046 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone35" parent="Set Dress" unique_id=1128703826 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 11)
 
-[node name="Floor Stone36" parent="Set Dress" unique_id=954256505 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone36" parent="Set Dress" unique_id=56865205 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 7)
 
-[node name="Floor Stone37" parent="Set Dress" unique_id=768627618 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone37" parent="Set Dress" unique_id=124685385 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3)
 
-[node name="Floor Stone38" parent="Set Dress" unique_id=1550378071 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone38" parent="Set Dress" unique_id=1272274669 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1)
 
-[node name="Floor Stone75" parent="Set Dress" unique_id=204251276 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone75" parent="Set Dress" unique_id=2099958778 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, -2)
 
-[node name="Floor Stone76" parent="Set Dress" unique_id=424807864 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone76" parent="Set Dress" unique_id=1035443625 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -2)
 
-[node name="Floor Stone77" parent="Set Dress" unique_id=72353115 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone77" parent="Set Dress" unique_id=235609579 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, -2)
 
-[node name="Floor Stone78" parent="Set Dress" unique_id=222857930 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone78" parent="Set Dress" unique_id=638697385 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, -2)
 
-[node name="Floor Stone105" parent="Set Dress" unique_id=1334272542 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone105" parent="Set Dress" unique_id=122050925 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 2)
 
-[node name="Floor Stone106" parent="Set Dress" unique_id=1793445252 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone106" parent="Set Dress" unique_id=989267324 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, 2)
 
-[node name="Floor Stone108" parent="Set Dress" unique_id=785510764 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone108" parent="Set Dress" unique_id=1714441373 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 4, 2)
 
-[node name="Floor Stone79" parent="Set Dress" unique_id=326420029 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone79" parent="Set Dress" unique_id=336497394 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 4, -2)
 
-[node name="Floor Stone80" parent="Set Dress" unique_id=1135078394 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone80" parent="Set Dress" unique_id=1133986518 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 4, -2)
 
-[node name="Floor Stone81" parent="Set Dress" unique_id=242149524 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone81" parent="Set Dress" unique_id=1586712799 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 4, -2)
 
-[node name="Floor Stone82" parent="Set Dress" unique_id=1174332085 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone82" parent="Set Dress" unique_id=768974493 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, -6)
 
-[node name="Floor Stone83" parent="Set Dress" unique_id=732979286 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone83" parent="Set Dress" unique_id=188413399 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -6)
 
-[node name="Floor Stone84" parent="Set Dress" unique_id=522380820 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone84" parent="Set Dress" unique_id=1404479885 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, -6)
 
-[node name="Floor Stone85" parent="Set Dress" unique_id=1679463909 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone85" parent="Set Dress" unique_id=900089497 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, -6)
 
-[node name="Floor Stone89" parent="Set Dress" unique_id=2018564472 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone89" parent="Set Dress" unique_id=64323680 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, -10)
 
-[node name="Floor Stone90" parent="Set Dress" unique_id=476791113 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone90" parent="Set Dress" unique_id=2017061822 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -10)
 
-[node name="Floor Stone91" parent="Set Dress" unique_id=1519135316 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone91" parent="Set Dress" unique_id=41045163 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, -10)
 
-[node name="Floor Stone92" parent="Set Dress" unique_id=1706539766 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone92" parent="Set Dress" unique_id=1166667698 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, -10)
 
-[node name="Floor Stone93" parent="Set Dress" unique_id=1758848073 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone93" parent="Set Dress" unique_id=725373579 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, -14)
 
-[node name="Floor Stone94" parent="Set Dress" unique_id=602694732 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone94" parent="Set Dress" unique_id=1586392482 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -14)
 
-[node name="Floor Stone95" parent="Set Dress" unique_id=1377480192 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone95" parent="Set Dress" unique_id=766240219 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, -14)
 
-[node name="Floor Stone96" parent="Set Dress" unique_id=1761907140 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone96" parent="Set Dress" unique_id=1595841994 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, -14)
 
-[node name="Floor Stone97" parent="Set Dress" unique_id=1650223605 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone97" parent="Set Dress" unique_id=120275482 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, -18)
 
-[node name="Floor Stone98" parent="Set Dress" unique_id=1444232839 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone98" parent="Set Dress" unique_id=59073847 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -18)
 
-[node name="Floor Stone99" parent="Set Dress" unique_id=1326875035 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone99" parent="Set Dress" unique_id=2125553933 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, -18)
 
-[node name="Floor Stone100" parent="Set Dress" unique_id=1164004269 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone100" parent="Set Dress" unique_id=240705710 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, -18)
 
-[node name="Floor Stone39" parent="Set Dress" unique_id=367195210 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone39" parent="Set Dress" unique_id=262035013 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
 
-[node name="Floor Stone40" parent="Set Dress" unique_id=1471338193 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone40" parent="Set Dress" unique_id=1918991717 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
 
-[node name="Floor Stone41" parent="Set Dress" unique_id=551462469 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone41" parent="Set Dress" unique_id=331942965 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11)
 
-[node name="Floor Stone42" parent="Set Dress" unique_id=911628196 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone42" parent="Set Dress" unique_id=805341169 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
 
-[node name="Floor Stone43" parent="Set Dress" unique_id=1859093900 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone43" parent="Set Dress" unique_id=1182922189 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
-[node name="Floor Stone44" parent="Set Dress" unique_id=541157567 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone44" parent="Set Dress" unique_id=1724028234 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
-[node name="Floor Stone45" parent="Set Dress" unique_id=1967068031 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone45" parent="Set Dress" unique_id=863212910 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 19)
 
-[node name="Floor Stone46" parent="Set Dress" unique_id=800791843 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone46" parent="Set Dress" unique_id=2059950172 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 15)
 
-[node name="Floor Stone47" parent="Set Dress" unique_id=343775664 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone47" parent="Set Dress" unique_id=850573746 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 11)
 
-[node name="Floor Stone48" parent="Set Dress" unique_id=109711798 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone48" parent="Set Dress" unique_id=1794381286 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 7)
 
-[node name="Floor Stone49" parent="Set Dress" unique_id=1374261638 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone49" parent="Set Dress" unique_id=1410571750 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
 
-[node name="Floor Stone50" parent="Set Dress" unique_id=1286459593 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone50" parent="Set Dress" unique_id=1318149654 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1)
 
-[node name="Floor Stone51" parent="Set Dress" unique_id=359552653 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone51" parent="Set Dress" unique_id=524642104 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 19)
 
-[node name="Floor Stone52" parent="Set Dress" unique_id=1064042265 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone52" parent="Set Dress" unique_id=680637154 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 15)
 
-[node name="Floor Stone53" parent="Set Dress" unique_id=1388674196 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone53" parent="Set Dress" unique_id=125359430 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 11)
 
-[node name="Floor Stone54" parent="Set Dress" unique_id=1357442782 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone54" parent="Set Dress" unique_id=273233788 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 7)
 
-[node name="Floor Stone55" parent="Set Dress" unique_id=313501538 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone55" parent="Set Dress" unique_id=866951564 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 3)
 
-[node name="Floor Stone56" parent="Set Dress" unique_id=835446203 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone56" parent="Set Dress" unique_id=2023956297 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -1)
 
-[node name="Floor Stone57" parent="Set Dress" unique_id=1272427100 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone57" parent="Set Dress" unique_id=967643713 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 19)
 
-[node name="Floor Stone58" parent="Set Dress" unique_id=1398701771 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone58" parent="Set Dress" unique_id=1406689431 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 15)
 
-[node name="Floor Stone59" parent="Set Dress" unique_id=1515244445 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone59" parent="Set Dress" unique_id=51192071 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 11)
 
-[node name="Floor Stone60" parent="Set Dress" unique_id=18797866 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone60" parent="Set Dress" unique_id=1685005448 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 7)
 
-[node name="Floor Stone61" parent="Set Dress" unique_id=73543681 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone61" parent="Set Dress" unique_id=750725956 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 3)
 
-[node name="Floor Stone62" parent="Set Dress" unique_id=1139179497 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone62" parent="Set Dress" unique_id=1406782000 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -1)
 
-[node name="Floor Stone63" parent="Set Dress" unique_id=607623961 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone63" parent="Set Dress" unique_id=604052183 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 19)
 
-[node name="Floor Stone64" parent="Set Dress" unique_id=1582015803 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone64" parent="Set Dress" unique_id=1539090551 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 15)
 
-[node name="Floor Stone65" parent="Set Dress" unique_id=1059807154 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone65" parent="Set Dress" unique_id=1098891769 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 11)
 
-[node name="Floor Stone66" parent="Set Dress" unique_id=526765622 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone66" parent="Set Dress" unique_id=685378437 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 7)
 
-[node name="Floor Stone101" parent="Set Dress" unique_id=448741195 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone101" parent="Set Dress" unique_id=32236991 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 2, 2)
 
-[node name="Floor Stone107" parent="Set Dress" unique_id=230321313 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone107" parent="Set Dress" unique_id=1886524259 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, 2)
 
-[node name="Floor Stone102" parent="Set Dress" unique_id=1549113989 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone102" parent="Set Dress" unique_id=2031789091 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 2, 2)
 
-[node name="Floor Stone103" parent="Set Dress" unique_id=686815605 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone103" parent="Set Dress" unique_id=1799201137 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 2, 6)
 
-[node name="Floor Stone104" parent="Set Dress" unique_id=2099153036 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone104" parent="Set Dress" unique_id=119724131 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 2, 6)
 
-[node name="Floor Stone67" parent="Set Dress" unique_id=1059159573 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone67" parent="Set Dress" unique_id=350608424 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 3)
 
-[node name="Floor Stone68" parent="Set Dress" unique_id=273004025 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone68" parent="Set Dress" unique_id=1154714576 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -1)
 
-[node name="Floor Stone69" parent="Set Dress" unique_id=1461997141 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone69" parent="Set Dress" unique_id=1840432163 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 19)
 
-[node name="Floor Stone70" parent="Set Dress" unique_id=1676905627 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone70" parent="Set Dress" unique_id=1703107771 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 15)
 
-[node name="Floor Stone71" parent="Set Dress" unique_id=363590694 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone71" parent="Set Dress" unique_id=1579077604 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 11)
 
-[node name="Floor Stone72" parent="Set Dress" unique_id=377192673 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone72" parent="Set Dress" unique_id=1504859170 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 7)
 
-[node name="Floor Stone73" parent="Set Dress" unique_id=144237372 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone73" parent="Set Dress" unique_id=1983621281 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 3)
 
-[node name="Floor Stone74" parent="Set Dress" unique_id=59518440 instance=ExtResource("7_t0hvh")]
+[node name="Floor Stone74" parent="Set Dress" unique_id=1841555387 instance=ExtResource("7_t0hvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -1)
 
 [node name="Floor Wood" parent="Set Dress" unique_id=405074498 instance=ExtResource("8_kfebt")]
@@ -945,6 +963,11 @@ transform = Transform3D(-0.42269737, 0, 0.9062709, 0, 1, 0, -0.9062709, 0, -0.42
 [node name="Crates Stacked3" parent="Set Dress" unique_id=1194129424 instance=ExtResource("23_lswbx")]
 transform = Transform3D(0.85385984, 0, 0.52050304, 0, 1, 0, -0.52050304, 0, 0.85385984, -20.531748, 0.050004, 16.959301)
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Set Dress/Crates Stacked3" unique_id=615574582]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.929686, 2.5, 15.247814)
+light_color = Color(1, 0, 0, 1)
+light_energy = 7.332
+
 [node name="Crates Stacked4" parent="Set Dress" unique_id=986639867 instance=ExtResource("23_lswbx")]
 transform = Transform3D(0.9992014, 0, -0.039957374, 0, 1, 0, 0.039957374, 0, 0.9992014, -7.112683, 0.050004, 17.013748)
 
@@ -1015,7 +1038,7 @@ transform = Transform3D(0.25881898, 0, -0.9659258, 0, 1.17, 0, 0.9659258, 0, 0.2
 transform = Transform3D(0.49999994, 0, -0.8660255, 0, 0.93600005, 0, 0.8660255, 0, 0.49999994, 20.8, 5, -11.100001)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Set Dress/Candles5" unique_id=1427353805]
-transform = Transform3D(0.9999999, 0, 0, 0, 1.068376, 0, 0, 0, 0.9999999, -0.013400078, 1.8162389, 0.22319984)
+transform = Transform3D(0.9999999, 0, 0, 0, 1.068376, 0, 0, 0, 0.9999999, -0.0134010315, 1.7094011, 0.22319984)
 light_color = Color(1, 0.6166667, 0, 1)
 light_energy = 1.5
 shadow_enabled = true
@@ -1029,15 +1052,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 6, -18.500002)
 [node name="Torch Mounted8" parent="Set Dress" unique_id=722803472 instance=ExtResource("17_e6lid")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 16, 6, -4.5000014)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1363959574]
+[node name="Ground" type="CSGBox3D" parent="." unique_id=1363959574]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9999981, -0.5, 1.0999985)
 material_override = SubResource("StandardMaterial3D_uujh0")
-size = Vector3(48.8, 1, 43)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=727779402]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8, 1.55, -16.55)
-material_override = SubResource("StandardMaterial3D_3t34l")
-size = Vector3(4.2000003, 3.5, 1.3000001)
+size = Vector3(100, 1, 100)
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="." unique_id=106339860]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.049999, 2.9, -13.9)
@@ -1072,7 +1090,7 @@ size = Vector3(18.7, 7.5, 18.6)
 interior = true
 
 [node name="CSGSphere3D2" type="CSGSphere3D" parent="." unique_id=792310390]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.199999, 1.8000001, -1.6999996)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.399999, 1.8000001, 2.9000003)
 material_override = SubResource("StandardMaterial3D_lswbx")
 radial_segments = 36
 rings = 18
@@ -1082,3 +1100,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 10.4, -2.4)
 quality = 2
 supersampling = true
 light_data = ExtResource("26_lswbx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=698588610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.8, 1.5, 7.5)
+material_override = SubResource("StandardMaterial3D_3t34l")
+mesh = SubResource("BoxMesh_qy4h0")

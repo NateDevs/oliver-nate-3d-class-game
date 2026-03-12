@@ -14,8 +14,10 @@ size = Vector3(2, 2.2, 0.3)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1203892197]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false
 shape = SubResource("BoxShape3D_yn14i")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1435377806]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, 0.65000004)
+visible = false
 shape = SubResource("BoxShape3D_l72g0")

@@ -12,6 +12,7 @@ height = 1.1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=256928035]
 transform = Transform3D(1, 0, 0, 0, 0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, 0, 0.15000004, 0.25)
+visible = false
 shape = SubResource("CapsuleShape3D_alp66")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=428415339]

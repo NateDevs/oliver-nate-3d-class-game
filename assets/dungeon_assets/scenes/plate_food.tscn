@@ -10,4 +10,5 @@ points = PackedVector3Array(0.034728948, 0.025295176, 0.35192618, -0.24657308, 0
 [node name="plate_food" parent="." unique_id=1603180940 instance=ExtResource("1_cgfo7")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=680794123]
+visible = false
 shape = SubResource("ConvexPolygonShape3D_xq68x")

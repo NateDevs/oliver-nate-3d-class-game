@@ -10,4 +10,5 @@ points = PackedVector3Array(0.2395847, 0.017626477, 1.038206, 0.3071264, 0.02199
 [node name="crates_stacked2" parent="." unique_id=1028058565 instance=ExtResource("1_blip8")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=854276398]
+visible = false
 shape = SubResource("ConvexPolygonShape3D_ua3kf")
