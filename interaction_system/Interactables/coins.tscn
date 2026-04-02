@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://rpv04qbwtan2"]
+
+[ext_resource type="Script" uid="uid://dtukiypueonfj" path="res://interaction_system/interactable.gd" id="1_sneao"]
+[ext_resource type="PackedScene" uid="uid://dasfxkio7tqet" path="res://assets/dungeon_assets/props/coin_stack.glb" id="2_sneao"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3clh3"]
+size = Vector3(1.6, 1.2, 1.6)
+
+[node name="Coins" type="StaticBody3D" unique_id=1132066206]
+script = ExtResource("1_sneao")
+interact_prompt = "Loot Coins"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=905333943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 0.6, -5.9604645e-08)
+shape = SubResource("BoxShape3D_3clh3")
+
+[node name="coin_stack" parent="." unique_id=61086010 instance=ExtResource("2_sneao")]

@@ -26,6 +26,9 @@
 [ext_resource type="PackedScene" uid="uid://cwqh8cskjhv7p" path="res://assets/dungeon_assets/scenes/candles.tscn" id="24_w4kkx"]
 [ext_resource type="PackedScene" uid="uid://dj60hkdik4hsh" path="res://assets/dungeon_assets/scenes/table_small.tscn" id="25_mhiu8"]
 [ext_resource type="LightmapGIData" uid="uid://cebgof012gwef" path="res://scenes/levels/level_01.lmbake" id="26_lswbx"]
+[ext_resource type="Script" uid="uid://uq06c48jn18" path="res://scenes/levels/dummy_enemy.gd" id="27_qy4h0"]
+[ext_resource type="PackedScene" uid="uid://b35c5ivw734am" path="res://interaction_system/Interactables/keys.tscn" id="27_uujh0"]
+[ext_resource type="PackedScene" uid="uid://rpv04qbwtan2" path="res://interaction_system/Interactables/coins.tscn" id="28_3t34l"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m802k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -52,11 +55,14 @@ fog_height = 0.5
 fog_height_density = 1.4757
 fog_depth_curve = 0.5000003
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.0714
+volumetric_fog_density = 0.0329
 volumetric_fog_sky_affect = 0.255
 adjustment_enabled = true
 adjustment_contrast = 1.045
 adjustment_saturation = 1.28
+
+[sub_resource type="FogMaterial" id="FogMaterial_lswbx"]
+density = -1.9045
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uujh0"]
 albedo_color = Color(0.14901961, 0.14117648, 0.07058824, 1)
@@ -65,31 +71,68 @@ albedo_color = Color(0.14901961, 0.14117648, 0.07058824, 1)
 metallic = 1.0
 roughness = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3t34l"]
-emission_enabled = true
-emission = Color(0, 0.4833331, 1, 1)
-emission_energy_multiplier = 13.75
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_e5bmj"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_qy4h0"]
-lightmap_size_hint = Vector2i(14, 21)
-add_uv2 = true
-
-[sub_resource type="FogMaterial" id="FogMaterial_lswbx"]
-density = -1.9045
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iqf6e"]
 
 [node name="Level 01" type="Node3D" unique_id=2112781780]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1417253037]
+[node name="Lighting and Env" type="Node" parent="." unique_id=1909237984]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting and Env" unique_id=1417253037]
 environment = SubResource("Environment_2djvx")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1951183747]
-transform = Transform3D(-0.6197791, -0.29016852, 0.72916126, 1.1694078e-08, 0.9291326, 0.36974674, -0.7847765, 0.22916134, -0.575857, 0, 0, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting and Env" unique_id=1951183747]
+transform = Transform3D(-0.61977905, -0.29016852, 0.7291613, 1.1694076e-08, 0.9291326, 0.3697468, -0.7847764, 0.22916132, -0.5758569, 0, 0, 0)
 light_color = Color(1, 0.9843137, 0.9529412, 1)
 light_angular_distance = 0.5
 shadow_enabled = true
 
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Lighting and Env" unique_id=106339860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.049999, 2.9, -13.9)
+visible = false
+size = Vector3(19.300001, 14.2, 13.6)
+
+[node name="ReflectionProbe6" type="ReflectionProbe" parent="Lighting and Env" unique_id=2122690967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.249999, 1.8000001, -1.6999995)
+visible = false
+size = Vector3(19.300001, 14.2, 15.6)
+
+[node name="ReflectionProbe3" type="ReflectionProbe" parent="Lighting and Env" unique_id=1686957416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6000013, 2.9, -11.4)
+visible = false
+size = Vector3(16, 14.2, 18.6)
+
+[node name="ReflectionProbe5" type="ReflectionProbe" parent="Lighting and Env" unique_id=187805983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7, 2.9, -11.7)
+visible = false
+size = Vector3(16, 14.2, 18)
+interior = true
+
+[node name="ReflectionProbe4" type="ReflectionProbe" parent="Lighting and Env" unique_id=1841096724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.450001, 2.9, 8.500002)
+visible = false
+size = Vector3(28.9, 14.2, 27.2)
+
+[node name="ReflectionProbe2" type="ReflectionProbe" parent="Lighting and Env" unique_id=241610906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.05, 1.8500004, 13.000005)
+visible = false
+size = Vector3(18.7, 7.5, 18.6)
+interior = true
+
+[node name="LightmapGI" type="LightmapGI" parent="Lighting and Env" unique_id=2105027705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 10.4, -2.4)
+quality = 2
+supersampling = true
+light_data = ExtResource("26_lswbx")
+
+[node name="FogVolume" type="FogVolume" parent="Lighting and Env" unique_id=112856414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.000001, 1.7, 13.15)
+size = Vector3(16.4, 4.4, 15.5)
+material = SubResource("FogMaterial_lswbx")
+
 [node name="ProtoController" parent="." unique_id=125454665 instance=ExtResource("1_m802k")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -14, 0.49999928, 11.699999)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -14, 0.49999928, -16.700003)
 
 [node name="Set Dress" type="Node" parent="." unique_id=706042836]
 
@@ -966,11 +1009,6 @@ transform = Transform3D(-0.42269737, 0, 0.9062709, 0, 1, 0, -0.9062709, 0, -0.42
 [node name="Crates Stacked3" parent="Set Dress" unique_id=1194129424 instance=ExtResource("23_lswbx")]
 transform = Transform3D(0.85385984, 0, 0.52050304, 0, 1, 0, -0.52050304, 0, 0.85385984, -20.531748, 0.050004, 16.959301)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Set Dress/Crates Stacked3" unique_id=615574582]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.929686, 2.5, 15.247814)
-light_color = Color(1, 0, 0, 1)
-light_energy = 7.332
-
 [node name="Crates Stacked4" parent="Set Dress" unique_id=986639867 instance=ExtResource("23_lswbx")]
 transform = Transform3D(0.9992014, 0, -0.039957374, 0, 1, 0, 0.039957374, 0, 0.9992014, -7.112683, 0.050004, 17.013748)
 
@@ -1055,61 +1093,43 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 6, -18.500002)
 [node name="Torch Mounted8" parent="Set Dress" unique_id=722803472 instance=ExtResource("17_e6lid")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 16, 6, -4.5000014)
 
-[node name="Ground" type="CSGBox3D" parent="." unique_id=1363959574]
+[node name="Ground" type="CSGBox3D" parent="Set Dress" unique_id=1363959574]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9999981, -0.5, 1.0999985)
 material_override = SubResource("StandardMaterial3D_uujh0")
 size = Vector3(100, 1, 100)
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="." unique_id=106339860]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.049999, 2.9, -13.9)
-visible = false
-size = Vector3(19.300001, 14.2, 13.6)
-
-[node name="ReflectionProbe6" type="ReflectionProbe" parent="." unique_id=2122690967]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.249999, 1.8000001, -1.6999995)
-visible = false
-size = Vector3(19.300001, 14.2, 15.6)
-
-[node name="ReflectionProbe3" type="ReflectionProbe" parent="." unique_id=1686957416]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6000013, 2.9, -11.4)
-visible = false
-size = Vector3(16, 14.2, 18.6)
-
-[node name="ReflectionProbe5" type="ReflectionProbe" parent="." unique_id=187805983]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7, 2.9, -11.7)
-visible = false
-size = Vector3(16, 14.2, 18)
-interior = true
-
-[node name="ReflectionProbe4" type="ReflectionProbe" parent="." unique_id=1841096724]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.450001, 2.9, 8.500002)
-visible = false
-size = Vector3(28.9, 14.2, 27.2)
-
-[node name="ReflectionProbe2" type="ReflectionProbe" parent="." unique_id=241610906]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.05, 1.8500004, 13.000005)
-visible = false
-size = Vector3(18.7, 7.5, 18.6)
-interior = true
-
-[node name="CSGSphere3D2" type="CSGSphere3D" parent="." unique_id=792310390]
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Set Dress" unique_id=792310390]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.399999, 1.8000001, 2.9000003)
 material_override = SubResource("StandardMaterial3D_lswbx")
 radial_segments = 36
 rings = 18
 
-[node name="LightmapGI" type="LightmapGI" parent="." unique_id=2105027705]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 10.4, -2.4)
-quality = 2
-supersampling = true
-light_data = ExtResource("26_lswbx")
+[node name="Label3D" type="Label3D" parent="." unique_id=1147012515]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.700001, 5.6, -12.1)
+text = "Locked until you 
+find keys"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=698588610]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.8, 1.5, 7.5)
-material_override = SubResource("StandardMaterial3D_3t34l")
-mesh = SubResource("BoxMesh_qy4h0")
+[node name="Label3D2" type="Label3D" parent="." unique_id=1524625062]
+transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, -7.0999994, 1.4999993, 19.800003)
+text = "Keys for locked door"
 
-[node name="FogVolume" type="FogVolume" parent="." unique_id=112856414]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.000001, 1.7, 13.15)
-size = Vector3(16.4, 4.4, 15.5)
-material = SubResource("FogMaterial_lswbx")
+[node name="Enemies" type="Node" parent="." unique_id=1191408299]
+
+[node name="DummyEnemy" type="StaticBody3D" parent="Enemies" unique_id=368383911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 1.1, 8.900001)
+script = ExtResource("27_qy4h0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemies/DummyEnemy" unique_id=902670471]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.500002, 0, -22.3)
+mesh = SubResource("CapsuleMesh_e5bmj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemies/DummyEnemy" unique_id=1767743791]
+shape = SubResource("CapsuleShape3D_iqf6e")
+
+[node name="Keys" parent="." unique_id=1132066206 instance=ExtResource("27_uujh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 1.1, -11.8)
+
+[node name="Coins" parent="." unique_id=2022455409 instance=ExtResource("28_3t34l")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -17.9, 1, -10.6)
+
+[connection signal="interacted" from="Keys" to="Enemies/DummyEnemy" method="kill_enemy"]

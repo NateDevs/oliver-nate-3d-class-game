@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b35c5ivw734am"]
+
+[ext_resource type="Script" uid="uid://dtukiypueonfj" path="res://interaction_system/interactable.gd" id="1_3clh3"]
+[ext_resource type="PackedScene" uid="uid://dm31qjnvwfo3t" path="res://assets/dungeon_assets/props/keyring.glb" id="1_ua3uj"]
+[ext_resource type="Script" uid="uid://dktr5vy3e74i8" path="res://interaction_system/Interactables/key_interaction.gd" id="3_2ht4m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3clh3"]
+size = Vector3(1.1, 0.4, 1.3000001)
+
+[node name="Keys" type="StaticBody3D" unique_id=1132066206]
+script = ExtResource("1_3clh3")
+interact_prompt = "Pick up Keys"
+
+[node name="keyring2" parent="." unique_id=570759786 instance=ExtResource("1_ua3uj")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=905333943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.050000012, 0.09999998, -0.050000012)
+shape = SubResource("BoxShape3D_3clh3")
+
+[node name="InteractionHelper" type="Node" parent="." unique_id=1709698766]
+script = ExtResource("3_2ht4m")
+
+[connection signal="interacted" from="." to="InteractionHelper" method="destroy_self"]

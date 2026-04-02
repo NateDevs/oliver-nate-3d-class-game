@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://btsd0mhsjdawm"]
+
+[ext_resource type="Script" uid="uid://buor1aj2gfk3w" path="res://interaction_system/interaction_ray.gd" id="1_ybjdp"]
+
+[node name="InteractionRay" type="RayCast3D" unique_id=1826620116]
+target_position = Vector3(0, 0, -4)
+script = ExtResource("1_ybjdp")
